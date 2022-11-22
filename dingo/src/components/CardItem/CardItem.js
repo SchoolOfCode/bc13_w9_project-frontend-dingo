@@ -1,9 +1,14 @@
 import React from "react";
 import "./CardItem.css"
 
-function CardItem(){
+function CardItem({card}){
     return (
-        <p> this is card item element</p>
+        <div> 
+         <img src={card.image} alt="dingo"/>
+         <h1>{card.title}</h1>
+        <p> {card.rating}</p>
+        <p>{card.category}</p>
+        </div>
     )
 }
 
