@@ -1,13 +1,13 @@
 import React from "react";
 import "./CardItem.css"
 
-function CardItem({card}){
+function CardItem({image,title,rating,category}){
     return (
         <div> 
-         <img src={card.image} alt="dingo"/>
-         <h1>{card.title}</h1>
-        <p> {card.rating}</p>
-        <p>{card.category}</p>
+         <img src={image} alt="dingo"/>
+         <h1>{title}</h1>
+        <p> {rating}</p>
+        <p>{category}</p>
         </div>
     )
 }

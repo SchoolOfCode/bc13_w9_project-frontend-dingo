@@ -1,12 +1,13 @@
 import React from "react";
 import "./Card.css"
+import CardItem from "../CardItem/CardItem";
 
- function Card({card,image}){
+ function Card({card}){
     return (
         
         <div className = "card">
             {card.map(card => {
-              return <Card key={card.id} image={card.image} title={card.title} rating={card.rating} category={card.catrgory}/>
+              return <CardItem key={card.id} image={card.image} title={card.title} rating={card.rating} category={card.catrgory}/>
             
             })}
             
