@@ -31,22 +31,22 @@ function InputForm() {
 				placeholder="Add title here"
 				{...register("title", { required: "Title is required" })}
 			/>
-
+			<p>{errors.title?.message}</p>
 			<input
 				type="text"
 				placeholder="Add resource link here"
 				{...register("link", { required: "Link is required" })}
 			/>
-
-			<select
+			<p>{errors.link?.message}</p>
+			<p><select
 				{...register("Difficulty", { required: "Difficulty is required" })}
 			>
 				<option value="">Difficulty</option>
 				<option value="1">1</option>
 				<option value="2">2</option>
 				<option value="3">3</option>
-			</select>
-
+			</select></p>
+			<p>{errors.Difficulty?.message}</p>
 			<select {...register("Category", { required: "Category is required" })}>
 				<option value="">Category</option>
 				<option value="Advanced Javascript">Advanced Javascript</option>
@@ -60,20 +60,16 @@ function InputForm() {
 				<option value="Testing">Testing</option>
 				<option value="UI/UX">UI/UX</option>
 			</select>
-
+			<p>{errors.Category?.message}</p>
 			<select {...register("Author", { required: "Author is required" })}>
 				<option value="">Author</option>
 				<option value="Coach">Coach</option>
 				<option value="Bootcamper">Bootcamper</option>
 				<option value="Chris aka Coding Batman">Chris aka Coding Batman</option>
 			</select>
-
-			<input type="submit" />
-			<p>{errors.title?.message}</p>
-			<p>{errors.link?.message}</p>
-			<p>{errors.Difficulty?.message}</p>
-			<p>{errors.Category?.message}</p>
 			<p>{errors.Author?.message}</p>
+			<input type="submit" />
+			
 		</form>
 	);
 }
