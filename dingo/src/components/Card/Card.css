@@ -2,8 +2,8 @@
     width: 80vw;
     height: 20vh;
     background-color: green;
-    display: flex;
-    justify-content: space-around;
+    /* display: flex; */
+    /* justify-content: space-around; */
     box-shadow: 5px 5px;
     margin: 10px;
     border: none;
