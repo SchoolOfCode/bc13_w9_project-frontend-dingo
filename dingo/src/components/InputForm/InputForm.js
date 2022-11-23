@@ -17,53 +17,63 @@ function InputForm() {
 		register,
 		handleSubmit,
 		formState: { errors },
-	} = useForm();
+	} = useForm({});
 	console.log(errors);
 	return (
 		<form
+			className="form"
 			onSubmit={handleSubmit(data => {
 				console.log(data);
 			})}
 		>
 			<input
 				type="text"
-				placeholder="Add Title here"
-				{...register("title", { required: "This is required" })}
+				placeholder="Add title here"
+				{...register("title", { required: "Title is required" })}
 			/>
+
 			<input
 				type="text"
 				placeholder="Add resource link here"
-				{...register("link", { required: "This is required" })}
+				{...register("link", { required: "Link is required" })}
 			/>
-			
-			<select {...register('Difficulty')}>
-				<option value='' >Difficulty</option>
-				<option value='1' >1</option>
-				<option value='2' >2</option>
-				<option value='3' >3</option>
+
+			<select
+				{...register("Difficulty", { required: "Difficulty is required" })}
+			>
+				<option value="">Difficulty</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
 			</select>
-		
-			<select {...register('Category')} >
-				<option value=''>Category</option>
-				<option value='Advanced Javascript' >Advanced Javascript</option>
-				<option value='API' >API</option>
-				<option value='Basic Javacsript' >Basic Javacsript</option>
-				<option value= 'CSS'>CSS</option>
-				<option value='Miscellaneous' >Miscellaneous</option>
-				<option value='Node.js' >Node.js</option>
-				<option value='React' >React</option>
-				<option value= 'SQL' >SQL</option>
-				<option value='Testing' >Testing</option>
-				<option value='UI/UX' >UI/UX</option>
-			
+
+			<select {...register("Category", { required: "Category is required" })}>
+				<option value="">Category</option>
+				<option value="Advanced Javascript">Advanced Javascript</option>
+				<option value="API">API</option>
+				<option value="Basic Javacsript">Basic Javacsript</option>
+				<option value="CSS">CSS</option>
+				<option value="Miscellaneous">Miscellaneous</option>
+				<option value="Node.js">Node.js</option>
+				<option value="React">React</option>
+				<option value="SQL">SQL</option>
+				<option value="Testing">Testing</option>
+				<option value="UI/UX">UI/UX</option>
 			</select>
-			<select {...register('Author')}>
-			 	<option value=''  >Author</option>
-				<option value='Coach' >Coach</option>
-				<option value='Bootcamper' >Bootcamper</option>
-				<option value='Chris aka Coding Batman' >Chris aka Coding Batman</option>
+
+			<select {...register("Author", { required: "Author is required" })}>
+				<option value="">Author</option>
+				<option value="Coach">Coach</option>
+				<option value="Bootcamper">Bootcamper</option>
+				<option value="Chris aka Coding Batman">Chris aka Coding Batman</option>
 			</select>
+
 			<input type="submit" />
+			<p>{errors.title?.message}</p>
+			<p>{errors.link?.message}</p>
+			<p>{errors.Difficulty?.message}</p>
+			<p>{errors.Category?.message}</p>
+			<p>{errors.Author?.message}</p>
 		</form>
 	);
 }
