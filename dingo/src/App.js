@@ -25,6 +25,25 @@ function App() {
 
 
   */
+ const gatherResources = async () => {
+const resources = await fetch (
+  `http://localhost:3000/api/resources`,
+{
+  method: "POST",
+  
+  headers: {
+    "Content-Type":"application/json",
+  },
+  body:JSON.stringify(card),
+}
+)
+const data = await resources.json();
+if(data){
+  alert("info submitted")
+}
+console.log(data)
+};
+gatherResources()
 
 	return (
 		<div className="App">
