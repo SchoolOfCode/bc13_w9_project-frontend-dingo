@@ -35,24 +35,35 @@ function InputForm() {
 				placeholder="Add resource link here"
 				{...register("link", { required: "This is required" })}
 			/>
+			
+			<select {...register('Difficulty')}>
+				<option value='' >Difficulty</option>
+				<option value='1' >1</option>
+				<option value='2' >2</option>
+				<option value='3' >3</option>
+			</select>
+		
+			<select {...register('Category')} >
+				<option value=''>Category</option>
+				<option value='Advanced Javascript' >Advanced Javascript</option>
+				<option value='API' >API</option>
+				<option value='Basic Javacsript' >Basic Javacsript</option>
+				<option value= 'CSS'>CSS</option>
+				<option value='Miscellaneous' >Miscellaneous</option>
+				<option value='Node.js' >Node.js</option>
+				<option value='React' >React</option>
+				<option value= 'SQL' >SQL</option>
+				<option value='Testing' >Testing</option>
+				<option value='UI/UX' >UI/UX</option>
+			
+			</select>
+			<select {...register('Author')}>
+			 	<option value=''  >Author</option>
+				<option value='Coach' >Coach</option>
+				<option value='Bootcamper' >Bootcamper</option>
+				<option value='Chris aka Coding Batman' >Chris aka Coding Batman</option>
+			</select>
 			<input type="submit" />
-			<select>
-				<option>Article</option>
-				<option>Video</option>
-				<option>Option 3</option>
-				<option>Option 4</option>
-			</select>
-			<select name="language">
-				<option>Front-end</option>
-				<option>Back-End</option>
-				<option>JavaScript</option>
-				<option>Option 4</option>
-			</select>
-			<select name="postedBy">
-				<option>Coach</option>
-				<option>Bootcamper</option>
-				<option>Coding Batman</option>
-			</select>
 		</form>
 	);
 }
