@@ -5,7 +5,15 @@ import InputForm from "./components/InputForm/InputForm";
 
 function App() {
 	// create state for cards
-	const [cards, setCards] = useState([]);
+	const [cards, setCards] = useState([
+		{
+			difficulty: 2,
+			link: "This is a link",
+			title: "some kind of title",
+			category: "React",
+			author: "Bootcamper",
+		},
+	]);
 
 	/* 
   Plan:
