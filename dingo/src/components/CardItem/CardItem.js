@@ -89,9 +89,7 @@ function CardItem({ title, difficulty, category, link, author }) {
 				</div>
 			) : null}
 
-			{/* <p> {difficulty}</p> */}
-
-			<p>{author}</p>
+			<div className="author">{author}</div>
 		</div>
 	);
 }
