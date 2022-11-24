@@ -1,8 +1,10 @@
-// import CardItem from "./CardItem.js";
-// import { test, expect } from "@jest/globals";
-// import { screen, render } from "@testing-library/react";
+import CardItem from "./CardItem.js";
+import { test, expect } from "@jest/globals";
+import { screen, render } from "@testing-library/react";
 
+// test to check that no title returns 'title is required'
 
+test.todo("Hello")
 
 // // test("card item contains a link", ()=> {
 
