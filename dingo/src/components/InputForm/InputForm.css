@@ -1,18 +1,36 @@
-.form{
-    background-color: #4E8979;
-    padding: 20px;
-    width: 90vw;
-    
+.form {
+	background-color: #4e8979;
+	width: 90vw;
+	padding: 1em;
+	margin: 1em;
+	border-radius: 1em;
 }
-.form-top{
-    display:flex;
-    width: 80%;
-    justify-content: space-between;
-    padding-bottom: 20px; 
+.form-top {
+	display: flex;
+	width: 80%;
+	justify-content: space-between;
+	padding-bottom: 1em;
+	font-size: larger;
 }
 
-.form-bottom{
-    display:flex;
-    width: 80%;
-    justify-content: space-between;
+.form-bottom {
+	display: flex;
+	width: 80%;
+	justify-content: space-between;
+}
+
+#submit-btn {
+	background-color: #f4e4fc;
+	color: #12332b;
+	font-weight: 600;
+	box-shadow: 5px 5px;
+	border-radius: 5px;
+	padding: 5px;
+	cursor: pointer;
+}
+
+select,
+input {
+	width: 20vw;
+	height: 3vh;
 }
