@@ -29,15 +29,16 @@ function InputForm({ postResources }) {
 				postResources(data);
 			})}
 		>
-			<input
+		<div className="form-top">
+			<input 
 				type="text"
 				placeholder="Add title here"
 				// using register to track input using custom hook
 				{...register("title", { required: "Title is required" })}
 			/>
 			{/* using custom hook method of displaying error message and validating form */}
-			<p>{errors.title?.message}</p>
-			<input
+			<p >{errors.title?.message}</p>
+			<input 
 				type="text"
 				placeholder="Add resource link here"
 				{...register("link", { required: "Link is required" })}
@@ -45,7 +46,7 @@ function InputForm({ postResources }) {
 			<p>{errors.link?.message}</p>
 			<p>
 				{/* dropdown menu element */}
-				<select
+				<select 
 					{...register("difficulty", { required: "Difficulty is required" })}
 				>
 					<option value="">Difficulty</option>
@@ -55,7 +56,10 @@ function InputForm({ postResources }) {
 				</select>
 			</p>
 			<p>{errors.Difficulty?.message}</p>
-			<select {...register("category", { required: "Category is required" })}>
+			</div>
+			<div className="form-bottom">
+			<select 
+			 {...register("category", { required: "Category is required" })}>
 				<option value="">Category</option>
 				<option value="Advanced Javascript">Advanced Javascript</option>
 				<option value="API">API</option>
@@ -69,14 +73,15 @@ function InputForm({ postResources }) {
 				<option value="UI/UX">UI/UX</option>
 			</select>
 			<p>{errors.Category?.message}</p>
-			<select {...register("author", { required: "Author is required" })}>
+			<select  {...register("author", { required: "Author is required" })}>
 				<option value="">Author</option>
 				<option value="Coach">Coach</option>
 				<option value="Bootcamper">Bootcamper</option>
 				<option value="Chris aka Coding Batman">Chris aka Coding Batman</option>
 			</select>
 			<p>{errors.Author?.message}</p>
-			<input type="submit" />
+			<input  type="submit" />
+			</div>
 		</form>
 	);
 }
