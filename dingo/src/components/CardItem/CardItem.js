@@ -70,10 +70,14 @@ function CardItem({ title, difficulty, category, link, author }) {
 				) : null}
 			</div>
 
-			<a className="link" href={link}>
+			<a className="link" target="blank" href={link}>
 				<h1 className="title">{title}</h1>
 			</a>
-			{difficulty === 1 ? <img src={dingo} alt="dingo" /> : null}
+			{difficulty === 1 ? (
+				<div className="imageContainer">
+					<img src={dingo} alt="dingo" />
+				</div>
+			): null}
 
 			{difficulty === 2 ? (
 				<div className="imageContainer">
