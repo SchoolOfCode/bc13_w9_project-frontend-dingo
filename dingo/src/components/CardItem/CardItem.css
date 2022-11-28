@@ -15,6 +15,8 @@
 	transform: scaleX(105%);
 }
 
+
+
 .title {
 	width: 45vw;
 	margin-left: 2em;
@@ -22,6 +24,14 @@
 	font-weight: bold;
 }
 
+.title:visited {
+	color: #2C6656;
+}
+
 .imageContainer {
 	display: flex;
+	width:180px;
+}
+.author{
+	text-align: right;
 }
