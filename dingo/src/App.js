@@ -33,7 +33,8 @@ function App() {
 			setCards(data.payload);
 		};
 		gatherResources();
-	}, []);
+		// Added cards state as a dependency so it loads
+	}, [cards]);
 
 	// POST request handling
 	const postResources = async obj => {
