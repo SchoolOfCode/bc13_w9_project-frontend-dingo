@@ -2,22 +2,23 @@ import CardItem from "./CardItem.js";
 import { test, expect } from "@jest/globals";
 import { screen, render, within } from "@testing-library/react";
 
+describe("#CardTitle", ()=>{
 
-    test("should render an author tag", ()=>{ 
-        render(<CardItem title={"test title"} category={"React"} author={"Bootcamper"}/>)  
-        const authorTag = screen.getByLabelText("author-tag");
-        expect(authorTag).toBeInTheDocument();
-        expect(authorTag).toHaveTextContent("Bootcamper");
-    })
+    beforeEach(()=>{render(<CardItem title={"test title"} category={"React"} author={"Bootcamper"}/>)});
 
+        test("should render an author tag", ()=>{  
+            const authorTag = screen.getByLabelText("author-tag");
+            expect(authorTag).toBeInTheDocument();
+            expect(authorTag).toHaveTextContent("Bootcamper");
+        })
 
-    test("should render an H1 title", ()=>{   
-        render(<CardItem title={"test title"} category={"React"} author={"Bootcamper"}/>)
-        const heading = screen.getByLabelText("card-title");
-        expect(heading).toBeInTheDocument();
-        expect(heading).toHaveTextContent("test title"); 
-    })
-
+        test("should render an H1 title", ()=>{   
+            // render(<CardItem title={"test title"} category={"React"} author={"Bootcamper"}/>)
+            const heading = screen.getByLabelText("card-title");
+            expect(heading).toBeInTheDocument();
+            expect(heading).toHaveTextContent("test title"); 
+        })
+})
  
     // test("should render an image", ()=>{
     //     const {container} = render(<CardItem category={"React"}/>);
