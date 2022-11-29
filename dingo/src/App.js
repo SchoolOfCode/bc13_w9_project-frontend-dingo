@@ -2,12 +2,11 @@ import { React, useEffect, useState } from "react";
 import "./App.css";
 import Cards from "./components/Cards/Cards";
 import InputForm from "./components/InputForm/InputForm";
+import Header from "./components/Header/Header";
 
 function App() {
 	// create state for cards
-	const [cards, setCards] = useState([
-
-	]);
+	const [cards, setCards] = useState([]);
 
 	/* 
   Plan:
@@ -34,7 +33,8 @@ function App() {
 			setCards(data.payload);
 		};
 		gatherResources();
-	}, []);
+		// Added cards state as a dependency so it loads
+	}, [cards]);
 
 	// POST request handling
 	const postResources = async obj => {
@@ -56,6 +56,7 @@ function App() {
 	return (
 		<div className="App">
 			{/* rendering components */}
+			<Header />
 			<InputForm postResources={postResources} />
 			<Cards cards={cards} />
 		</div>

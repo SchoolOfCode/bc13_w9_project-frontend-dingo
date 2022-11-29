@@ -1,0 +1,16 @@
+.Header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#DingoIcon {
+	height: 20vh;
+	width: 20vw;
+}
+
+.pageTitle {
+	font-weight: bolder;
+	font-size: xx-large;
+	color: #12332b;
+}

@@ -4,7 +4,7 @@ import CardItem from "../CardItem/CardItem";
 
 function Cards({ cards }) {
 	return (
-		<div>
+		<div className="cardsBackground">
 			{cards.map(card => {
 				return (
 					<CardItem
