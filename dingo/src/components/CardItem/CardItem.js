@@ -8,22 +8,22 @@ function CardItem({ title, difficulty, category, link, author }) {
 			{/* here is where we're conditionally rendering the different topic cards using external URLs*/}
 
 			
-			<div className="topic-image">
+			<div className="topic-image" aria-label="topic-div"  >
 				{category === "React" ? (
-					<img
+					<img aria-label="category-image"
 						src="https://cdn-icons-png.flaticon.com/512/1183/1183672.png
 				"
 						alt="react logo"
 					/>
 				) : null}
 				{category === "API" ? (
-					<img
+					<img  
 						src="https://cdn-icons-png.flaticon.com/512/2172/2172831.png"
 						alt="API logo"
 					/>
 				) : null}
 				{category === "Basic JavaScript" ? (
-					<img
+					<img 
 						src="https://cdn-icons-png.flaticon.com/512/1199/1199124.png"
 						alt="Basic JavaScript logo"
 					/>
