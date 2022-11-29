@@ -14,6 +14,8 @@ Estimated completion Time <30mins <1hr <2hr <5hr 10hr or more
 Posted by: Bootcamper (1), Coach(2)
 */
 
+// 🚨VICTORIA TESTING EDITS: edded aria-label to the form and name attribute to the title and link input fields so we can refer to them in the test docs
+
 function InputForm({ postResources }) {
 	const {
 		register,
@@ -23,12 +25,14 @@ function InputForm({ postResources }) {
 	} = useForm({});
 	return (
 		<form
+			aria-label="Add new resource"
 			className="form"
 			onSubmit={handleSubmit(data => {
 				console.log(data);
 				postResources(data);
 			})}
 		>
+
 			<div className="titleContainer">
 				<h1>Add a resource:</h1>
 			</div>

@@ -6,6 +6,8 @@ function CardItem({ title, difficulty, category, link, author }) {
 	return (
 		<div className="cardItem">
 			{/* here is where we're conditionally rendering the different topic cards using external URLs*/}
+
+			
 			<div className="topic-image">
 				{category === "React" ? (
 					<img
@@ -69,9 +71,11 @@ function CardItem({ title, difficulty, category, link, author }) {
 					/>
 				) : null}
 			</div>
-
+      
+        
 			<a className="link" target="blank" href={link}>
-				<h1 className="title">{title}</h1>
+				<h1 aria-label="card-title" className="title">{title}</h1>
+
 			</a>
 			{difficulty === 1 ? (
 				<div className="imageContainer">
@@ -93,7 +97,9 @@ function CardItem({ title, difficulty, category, link, author }) {
 				</div>
 			) : null}
 
-			<div className="author">{author}</div>
+
+			<div aria-label="author-tag" className="author">{author}</div>
+
 		</div>
 	);
 }
