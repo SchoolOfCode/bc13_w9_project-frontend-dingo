@@ -20,11 +20,10 @@ function CardItem({ image, title, difficulty, category, link, author }) {
 				{category === "UI/UX" ? <img src="https://cdn-icons-png.flaticon.com/512/7858/7858975.png" alt="UI/UX logo"/> : null}
 				{category === "Testing" ? <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSffNFCMkCpiaFUO9zQlwIfm5HuobQSdlelQw&usqp=CAU" alt="Testing logo"/> : null}
 
-
 			</div>
 
 			<a href={link}>
-				<h1>{title}</h1>
+				<h1 aria-label="card-title">{title}</h1>
 			</a>
 			{difficulty === 1 ? <img src={dingo} alt="dingo" /> : null}
 
@@ -44,7 +43,7 @@ function CardItem({ image, title, difficulty, category, link, author }) {
 			
 			{/* <p> {difficulty}</p> */}
 			
-			<p>{author}</p>
+			<p aria-label="author-tag">{author}</p>
 		</div>
 	);
 }
