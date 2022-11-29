@@ -33,7 +33,7 @@ function InputForm({ postResources }) {
 			})}
 		>
 
-			<div className="titleContainer">
+			<div className="titleContainer" aria-label = "title-container">
 				<h1>Add a resource:</h1>
 			</div>
 			<div className="colParent">
@@ -66,7 +66,7 @@ function InputForm({ postResources }) {
 				</div>
 				<div className="right-col">
 					<select
-						{...register("category", { required: "Category is required" })}
+						{...register("category", { required: "Category is required" })} aria-label = "category-dropdown"
 					>
 						<option value="">Category</option>
 						<option value="Advanced Javascript">Advanced Javascript</option>

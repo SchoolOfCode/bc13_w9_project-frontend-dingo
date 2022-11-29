@@ -5,6 +5,7 @@ import { screen, render, within } from "@testing-library/react";
 describe("#CardTitle", () => {
 	// render the cardItem before each test
 	beforeEach(() => {
+		// eslint-disable-next-line
 		render(
 			<CardItem
 				title={"test title"}
@@ -13,6 +14,7 @@ describe("#CardTitle", () => {
 				difficulty={3}
 			/>
 		);
+		// eslint-disable-next-line
 		screen.debug();
 	});
 	// use screen.debug() to see what is being rendered
