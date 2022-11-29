@@ -7,23 +7,22 @@ function CardItem({ title, difficulty, category, link, author }) {
 		<div className="cardItem">
 			{/* here is where we're conditionally rendering the different topic cards using external URLs*/}
 
-			
-			<div className="topic-image" aria-label="topic-div"  >
+			<div className="topic-image" aria-label="topic-div">
 				{category === "React" ? (
-					<img aria-label="category-image"
-						src="https://cdn-icons-png.flaticon.com/512/1183/1183672.png
-				"
+					<img
+						aria-label="category-image"
+						src="https://cdn-icons-png.flaticon.com/512/1183/1183672.png"
 						alt="react logo"
 					/>
 				) : null}
 				{category === "API" ? (
-					<img  
+					<img
 						src="https://cdn-icons-png.flaticon.com/512/2172/2172831.png"
 						alt="API logo"
 					/>
 				) : null}
 				{category === "Basic JavaScript" ? (
-					<img 
+					<img
 						src="https://cdn-icons-png.flaticon.com/512/1199/1199124.png"
 						alt="Basic JavaScript logo"
 					/>
@@ -71,35 +70,35 @@ function CardItem({ title, difficulty, category, link, author }) {
 					/>
 				) : null}
 			</div>
-      
-        
-			<a className="link" target="blank" href={link}>
-				<h1 aria-label="card-title" className="title">{title}</h1>
 
+			<a className="link" target="blank" href={link}>
+				<h1 aria-label="card-title" className="title">
+					{title}
+				</h1>
 			</a>
 			{difficulty === 1 ? (
 				<div className="imageContainer">
-					<img src={dingo} alt="dingo" />
+					<img src={dingo} alt="dingo" aria-label="DDImage" />
 				</div>
-			): null}
+			) : null}
 
 			{difficulty === 2 ? (
 				<div className="imageContainer">
-					<img src={dingo} alt="dingo" />
-					<img src={dingo} alt="dingo" />
+					<img src={dingo} alt="dingo" aria-label="DDImage" />
+					<img src={dingo} alt="dingo" aria-label="DDImage" />
 				</div>
 			) : null}
 			{difficulty === 3 ? (
 				<div className="imageContainer">
-					<img src={dingo} alt="dingo" />
-					<img src={dingo} alt="dingo" />
-					<img src={dingo} alt="dingo" />
+					<img src={dingo} alt="dingo" aria-label="DDImage" />
+					<img src={dingo} alt="dingo" aria-label="DDImage" />
+					<img src={dingo} alt="dingo" aria-label="DDImage" />
 				</div>
 			) : null}
 
-
-			<div aria-label="author-tag" className="author">{author}</div>
-
+			<div aria-label="author-tag" className="author">
+				{author}
+			</div>
 		</div>
 	);
 }
