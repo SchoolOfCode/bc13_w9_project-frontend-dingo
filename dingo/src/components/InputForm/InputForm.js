@@ -66,9 +66,9 @@ function InputForm({ postResources }) {
 						{...register("category", { required: "Category is required" })} aria-label = "category-dropdown"
 					>
 						<option value="">Category</option>
-						<option value="Advanced Javascript">Advanced Javascript</option>
+						<option value="Advanced JavaScript">Advanced JavaScript</option>
 						<option value="API">API</option>
-						<option value="Basic Javacsript">Basic Javacsript</option>
+						<option value="Basic JavaScript">Basic JavaScript</option>
 						<option value="CSS">CSS</option>
 						<option value="Miscellaneous">Miscellaneous</option>
 						<option value="Node.js">Node.js</option>

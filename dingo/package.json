@@ -18,7 +18,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "doc": "jsdoc -c jsdoc.json",
-    "opendoc": "start ./docs/global.html"
+    "opendoc": "open ./docs/global.html"
   },
   "eslintConfig": {
     "extends": [

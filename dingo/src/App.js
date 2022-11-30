@@ -26,7 +26,6 @@ function App() {
         },
       });
       const data = await resources.json();
-      console.log(data.payload);
       // setting state with payload of request
       setCards(data.payload);
     };
