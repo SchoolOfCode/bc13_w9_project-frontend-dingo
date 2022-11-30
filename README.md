@@ -1,18 +1,47 @@
 # bc13_w9_project-frontend-dingo
 
-readme version 2.0
+## Dingo’s Directives README
 
-CSS THINGS TO DO:
+Problem: Resource Overload! How to know which of the tech links to follow and dedicate our limited time.
 
-    CONTENT
-    - Find and download images (delete background!) in PNG format
-    - conditional rendering in the card component so that different mages are produced according to the category
-   - 
+Our Solution: To have a centralised all in one go to hub where resources are peer reviewed and rated to help you decide which ones are worth your precious time!
 
-   SPACING AND POSITIONING
-    - Research flexbox so we can apply it to A) spacing within the card item and B) distribution of form and card components
+## Acknowledgements
 
-    COLOURS
-    - Implement screen 
+- [https://react-hook-form.com/get-started](https://react-hook-form.com/get-started)
+- [https://expressjs.com/en/resources/middleware/cors.html](https://expressjs.com/en/resources/middleware/cors.html)
+- Hamza
+- Nadeem
+- The dingos!
 
-    TEXT
+## API Refernece
+
+
+#### Get all items
+
+```http
+  GET /api/resources
+```
+
+| Mehod    | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `api_key` | `string` | **Required**. Your API key |
+
+#### Get item
+
+```http
+  GET /api/items/${id}
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `string` | **Required**. Id of item to fetch |
+
+#### add(num1, num2)
+
+| HTTP Method | Path            | Additional info | Result                 | Result                                       |
+| ----------- | --------------- | --------------- | ---------------------- | ---------------------------------------------|
+| GET         | /api/resources  |                 | get all resources      | { success: Boolean, payload: Resource array} |
+| GET         | /api/resources  | ?format=video   | get resource by format | { success: Boolean, payload: Resource array} |
+| POST        | /api/resources  | {body}          | post new resource      | { success: Boolean, payload: Resource}       |
+
