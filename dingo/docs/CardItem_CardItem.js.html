@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: CardItem/CardItem.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: CardItem/CardItem.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from "react";
+import "./CardItem.css";
+import dingo from "./dingo.png";
+
+// Card item component: displays data from resources table as category image, a heading that hyperlinks through (on a separate page) to the resource, 1/2/3 dingo images depending on the difficulty rating, and the author of the resource
+
+/**
+ * displays data from resources table as category image, a heading that hyperlinks through (on a separate page) to the resource, 1/2/3 dingo images depending on the difficulty rating, and the author of the resource
+ * @param {string} title - resource title
+ * @param {number} difficulty - difficulty from 1-3 
+ * @param {string} category - one of ten different topic areas
+ * @param {string} link - link to resource 
+ * @param {string} author - resource contributor (Coach/Bootcamper/Chris)
+ * @returns {component} 
+ */
+function CardItem({ title, difficulty, category, link, author }) {
+  return (
+    &lt;div className="cardItem">
+
+      {/* here is where we're conditionally rendering the different topic cards using external URLs*/}
+      &lt;div className="topic-image" aria-label="topic-div">
+        {category === "React" ? (
+          &lt;img
+		  // aria label on this image for testing purposes
+            aria-label="category-image"
+            src="https://cdn-icons-png.flaticon.com/512/1183/1183672.png"
+            alt="react logo"
+          />
+        ) : null}
+        {category === "API" ? (
+          &lt;img
+            src="https://cdn-icons-png.flaticon.com/512/2172/2172831.png"
+            alt="API logo"
+          />
+        ) : null}
+        {category === "Basic JavaScript" ? (
+          &lt;img
+            src="https://cdn-icons-png.flaticon.com/512/1199/1199124.png"
+            alt="Basic JavaScript logo"
+          />
+        ) : null}
+        {category === "Advanced JavaScript" ? (
+          &lt;img
+            src="https://e7.pngegg.com/pngimages/130/641/png-clipart-javascript-node-js-computer-icons-logo-application-software-javascript-icon-text-logo.png"
+            alt="Advanced JavaScript logo"
+          />
+        ) : null}
+        {category === "CSS" ? (
+          &lt;img
+            src="https://cdn-icons-png.flaticon.com/512/919/919826.png"
+            alt="CSS logo"
+          />
+        ) : null}
+        {category === "Miscellaneous" ? (
+          &lt;img
+            src="https://cdn-icons-png.flaticon.com/512/1010/1010721.png"
+            alt="Miscellaneous logo"
+          />
+        ) : null}
+        {category === "Node.js" ? (
+          &lt;img
+            src="https://cdn.iconscout.com/icon/free/png-256/nodejs-2-226035.png"
+            alt="Node.js logo"
+          />
+        ) : null}
+        {category === "SQL" ? (
+          &lt;img
+            src="https://cdn-icons-png.flaticon.com/128/4248/4248340.png"
+            alt="SQL logo"
+          />
+        ) : null}
+        {category === "UI/UX" ? (
+          &lt;img
+            src="https://cdn-icons-png.flaticon.com/512/7858/7858975.png"
+            alt="UI/UX logo"
+          />
+        ) : null}
+        {category === "Testing" ? (
+          &lt;img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSffNFCMkCpiaFUO9zQlwIfm5HuobQSdlelQw&amp;usqp=CAU"
+            alt="Testing logo"
+          />
+        ) : null}
+      &lt;/div>
+
+      &lt;a className="link" target="blank" href={link}>
+        &lt;h1 aria-label="card-title" className="title">
+          {title}
+        &lt;/h1>
+      &lt;/a>
+      {difficulty === 1 ? (
+        &lt;div className="imageContainer">
+          &lt;img src={dingo} alt="dingo" aria-label="DDImage" />
+        &lt;/div>
+      ) : null}
+
+      {difficulty === 2 ? (
+        &lt;div className="imageContainer">
+          &lt;img src={dingo} alt="dingo" aria-label="DDImage" />
+          &lt;img src={dingo} alt="dingo" aria-label="DDImage" />
+        &lt;/div>
+      ) : null}
+      {difficulty === 3 ? (
+        &lt;div className="imageContainer">
+          &lt;img src={dingo} alt="dingo" aria-label="DDImage" />
+          &lt;img src={dingo} alt="dingo" aria-label="DDImage" />
+          &lt;img src={dingo} alt="dingo" aria-label="DDImage" />
+        &lt;/div>
+      ) : null}
+
+      &lt;div aria-label="author-tag" className="author">
+        {author}
+      &lt;/div>
+    &lt;/div>
+  );
+}
+
+export default CardItem;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#CardItem">CardItem</a></li><li><a href="global.html#InputForm">InputForm</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Wed Nov 30 2022 11:49:08 GMT+0000 (Greenwich Mean Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

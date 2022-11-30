@@ -10,7 +10,7 @@ import "./InputForm.css";
  
 /**
  * Component that renders input fields and drop down menus for users to add new resource to database, using custom form hook
- * @param {async function} - calls post resources which handles POST crud method
+ * @param {function} - calls post resources which handles POST crud method
  * @returns input form  
  */
 function InputForm({ postResources }) {
