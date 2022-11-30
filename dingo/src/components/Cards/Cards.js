@@ -2,6 +2,7 @@ import React from "react";
 import "./Cards.css";
 import CardItem from "../CardItem/CardItem";
 
+
 function Cards({ cards }) {
 	return (
 		<div className="cardsBackground">

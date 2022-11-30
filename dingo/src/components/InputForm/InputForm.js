@@ -1,21 +1,18 @@
 import React from "react";
 // import custom hook
-// docs: https://react-hook-form.com/
 import { useForm } from "react-hook-form";
 import "./InputForm.css";
 
-/* 
-Title
-Link
-Difficulty
-Category 1,2
-Format (Article, Video, Course)
-Estimated completion Time <30mins <1hr <2hr <5hr 10hr or more
-Posted by: Bootcamper (1), Coach(2)
-*/
+// Input form component: renders input fields and drop down menus for users to add new resource to database.
+	// aria labels added here for testing 
+	// Uses custom form hook: returns an object with key/value pairs that can be directly posted to the database, without having to access values through dot notation. Also comes with easy error handling and validation methods! docs: https://react-hook-form.com/
 
-// 🚨VICTORIA TESTING EDITS: edded aria-label to the form and name attribute to the title and link input fields so we can refer to them in the test docs
-
+ 
+/**
+ * Component that renders input fields and drop down menus for users to add new resource to database, using custom form hook
+ * @param {async function} - calls post resources which handles POST crud method
+ * @returns input form  
+ */
 function InputForm({ postResources }) {
 	const {
 		register,
