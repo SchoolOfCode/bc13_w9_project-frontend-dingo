@@ -14,30 +14,12 @@ Our Solution: To have a centralised all in one go to hub where resources are pee
 - Nadeem
 - The dingos!
 
-## API Refernece
+## API Reference
 
 
-#### Get all items
+#### Reference Table
 
-```http
-  GET /api/resources
-```
-
-| Mehod    | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `api_key` | `string` | **Required**. Your API key |
-
-#### Get item
-
-```http
-  GET /api/items/${id}
-```
-
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | **Required**. Id of item to fetch |
-
-#### add(num1, num2)
+              |
 
 | HTTP Method | Path            | Additional info | Result                 | Result                                       |
 | ----------- | --------------- | --------------- | ---------------------- | ---------------------------------------------|
