@@ -14,12 +14,11 @@ Our Solution: To have a centralised all in one go to hub where resources are pee
 - Nadeem
 - The dingos!
 
-## API Reference
+## API Refernece
 
 
 #### Reference Table
 
-              |
 
 | HTTP Method | Path            | Additional info | Result                 | Result                                       |
 | ----------- | --------------- | --------------- | ---------------------- | ---------------------------------------------|
