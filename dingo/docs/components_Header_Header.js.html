@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: components/Header/Header.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,35 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: components/Header/Header.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from "react";
+import "./Header.css";
+import dingoIcon from "./dingo-border.png";
 
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+/**
+ * Function component that renders a header with logo and title.
+ * @returns {component}
+ */
+export default function Header() {
+	return (
+		&lt;div className="Header">
+			&lt;h1 className="pageTitle">Dingos&lt;/h1>
+			&lt;img src={dingoIcon} alt="Dingo logo" id="DingoIcon" />
+			&lt;h1 className="pageTitle">Directives&lt;/h1>
+		&lt;/div>
+	);
+}
+</code></pre>
+        </article>
+    </section>
 
 
 

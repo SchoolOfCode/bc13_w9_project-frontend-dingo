@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: components/Cards/Cards.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,48 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: components/Cards/Cards.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from "react";
+import "./Cards.css";
+import CardItem from "../CardItem/CardItem";
 
+/**
+ * Cards component that maps over the resources array and generates a display card for each one.
+ * @param {array} cards array of resource objects fetched from database 
+ * @returns {component}
+ */
+function Cards({ cards }) {
+	return (
+		&lt;div className="cardsBackground">
+			{cards.map(card => {
+				return (
+					&lt;CardItem
+						key={card.id}
+						image={card.image}
+						title={card.title}
+						link={card.link}
+						difficulty={card.difficulty}
+						category={card.category}
+						author={card.author}
+					/>
+				);
+			})}
+		&lt;/div>
+	);
+}
 
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+export default Cards;
+</code></pre>
+        </article>
+    </section>
 
 
 

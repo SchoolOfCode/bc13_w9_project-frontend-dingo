@@ -4,12 +4,20 @@ import Cards from "./components/Cards/Cards";
 import InputForm from "./components/InputForm/InputForm";
 import Header from "./components/Header/Header";
 
+/**
+ * Component that returns all elements within the app
+ * @returns {component}
+ */
 function App() {
   // create state for cards
   const [cards, setCards] = useState([]);
 
   // Load resources data from database on mount using GET request
+
+
   useEffect(() => {
+
+
     const gatherResources = async (obj) => {
       const resources = await fetch(`http://localhost:3000/api/resources`, {
         method: "GET",

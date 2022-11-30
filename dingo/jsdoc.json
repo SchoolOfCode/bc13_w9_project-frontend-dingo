@@ -12,6 +12,5 @@
     "opts": {
       "recurse": true,
       "destination": "./docs/"
-     
     }
   }
