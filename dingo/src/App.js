@@ -9,15 +9,11 @@ import Header from "./components/Header/Header";
  * @returns {component}
  */
 function App() {
-  // create state for cards
+  // create state for cards - this will be populated with an array of objects from the database
   const [cards, setCards] = useState([]);
 
   // Load resources data from database on mount using GET request
-
-
   useEffect(() => {
-
-
     const gatherResources = async (obj) => {
       const resources = await fetch(`http://localhost:3000/api/resources`, {
         method: "GET",
@@ -26,14 +22,14 @@ function App() {
         },
       });
       const data = await resources.json();
-      // setting state with payload of request
+      // set state to the payload of request - an array of resource objects 
       setCards(data.payload);
     };
     gatherResources();
-    // Added cards state as a dependency so it reloads when a new resources is posted
+    // Add cards state as a dependency so it reloads when a new resource is posted
   }, [cards]);
 
-  // POST request handling to link front and backend
+  // POST request handling: send post request with object as body to the route handler on the backend 
   const postResources = async (obj) => {
     const resources = await fetch(`http://localhost:3000/api/resources`, {
       method: "POST",
@@ -44,7 +40,7 @@ function App() {
       body: JSON.stringify(obj),
     });
     const data = await resources.json();
-    // updating resources state with new entered data.
+    // update cards state with new entered data.
     setCards([...cards, data]);
   };
 
