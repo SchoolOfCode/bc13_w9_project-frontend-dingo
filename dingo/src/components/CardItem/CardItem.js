@@ -13,50 +13,51 @@ const getDingoRatings = (difficulty) => {
   return content;
 };
 
-const categories = {
-  React: {
-    source: "https://cdn-icons-png.flaticon.com/512/1183/1183672.png",
-    alt: "react",
-  },
-  API: {
-    source: "https://cdn-icons-png.flaticon.com/512/2172/2172831.png",
-    alt: "API",
-  },
-  BasicJavaScript: {
-    source: "https://cdn-icons-png.flaticon.com/512/1199/1199124.png",
-    alt: "Basic JavaScript",
-  },
-  AdvancedJavaScript: {
-    source:
-      "https://e7.pngegg.com/pngimages/130/641/png-clipart-javascript-node-js-computer-icons-logo-application-software-javascript-icon-text-logo.png",
-    alt: "Advanced JavScript",
-  },
-  CSS: {
-    source: "https://cdn-icons-png.flaticon.com/512/919/919826.png",
-    alt: "CSS",
-  },
-  Miscellaneous: {
-    source: "https://cdn-icons-png.flaticon.com/512/1010/1010721.png",
-    alt: "Miscellaneous",
-  },
-  Nodejs: {
-    source: "https://cdn.iconscout.com/icon/free/png-256/nodejs-2-226035.png",
-    alt: "Nodejs",
-  },
-  SQL: {
-    source: "https://cdn-icons-png.flaticon.com/128/4248/4248340.png",
-    alt: "SQL",
-  },
-  UIUX: {
-    source: "https://cdn-icons-png.flaticon.com/512/7858/7858975.png",
-    alt: "UI/UX",
-  },
-  Testing: {
-    source:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSffNFCMkCpiaFUO9zQlwIfm5HuobQSdlelQw&usqp=CAU",
-    alt: "Testing",
-  },
-};
+// TOPIC REFACTORING
+// const categories = {
+//   React: {
+//     source: "https://cdn-icons-png.flaticon.com/512/1183/1183672.png",
+//     alt: "react",
+//   },
+//   API: {
+//     source: "https://cdn-icons-png.flaticon.com/512/2172/2172831.png",
+//     alt: "API",
+//   },
+//   BasicJavaScript: {
+//     source: "https://cdn-icons-png.flaticon.com/512/1199/1199124.png",
+//     alt: "Basic JavaScript",
+//   },
+//   AdvancedJavaScript: {
+//     source:
+//       "https://e7.pngegg.com/pngimages/130/641/png-clipart-javascript-node-js-computer-icons-logo-application-software-javascript-icon-text-logo.png",
+//     alt: "Advanced JavScript",
+//   },
+//   CSS: {
+//     source: "https://cdn-icons-png.flaticon.com/512/919/919826.png",
+//     alt: "CSS",
+//   },
+//   Miscellaneous: {
+//     source: "https://cdn-icons-png.flaticon.com/512/1010/1010721.png",
+//     alt: "Miscellaneous",
+//   },
+//   Nodejs: {
+//     source: "https://cdn.iconscout.com/icon/free/png-256/nodejs-2-226035.png",
+//     alt: "Nodejs",
+//   },
+//   SQL: {
+//     source: "https://cdn-icons-png.flaticon.com/128/4248/4248340.png",
+//     alt: "SQL",
+//   },
+//   UIUX: {
+//     source: "https://cdn-icons-png.flaticon.com/512/7858/7858975.png",
+//     alt: "UI/UX",
+//   },
+//   Testing: {
+//     source:
+//       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSffNFCMkCpiaFUO9zQlwIfm5HuobQSdlelQw&usqp=CAU",
+//     alt: "Testing",
+//   },
+// };
 
 // Card item component: displays data from resources table as category image, a heading that hyperlinks through (on a separate page) to the resource, 1/2/3 dingo images depending on the difficulty rating, and the author of the resource
 /**
@@ -71,10 +72,10 @@ const categories = {
 function CardItem({ title, difficulty, category, link, author }) {
 
   // 🛠️function that removes all spaces and punctuation from description, and assigns it to the variable categoryRef. This is so that we can use it to draw on the correct alt and source properties of the category object above when conditoinally rendering the image. 
-  const categoryRef = category
-    .replace(/\s{2,}/g, " ")
-    .split(" ")
-    .join("");
+  // const categoryRef = category
+  //   .replace(/\s{2,}/g, " ")
+  //   .split(" ")
+  //   .join("");
 
   return (
     <div className="cardItem">
@@ -82,11 +83,76 @@ function CardItem({ title, difficulty, category, link, author }) {
       {/* Conditionally rendering the different topic images using external image URLs as source*/}
       <div className="topic-image" aria-label="topic-div">
         {/* 🛠️🚨THIS WORKS in the sense that it is conditionally rendering the correct topic image. BUT now react is constantly doing re-renders? */}
-        <img
+        {/* <img
           aria-label="category-image"
           src={categories[categoryRef].source}
           alt={categories[categoryRef].alt}
-        />
+        /> */}
+      </div>
+
+      <div className="topic-image" aria-label="topic-div">
+        {category === "React" ? (
+          <img
+		  // aria label on this image for testing purposes
+            aria-label="category-image"
+            src="https://cdn-icons-png.flaticon.com/512/1183/1183672.png"
+            alt="react logo"
+          />
+        ) : null}
+        {category === "API" ? (
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/2172/2172831.png"
+            alt="API logo"
+          />
+        ) : null}
+        {category === "Basic JavaScript" ? (
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/1199/1199124.png"
+            alt="Basic JavaScript logo"
+          />
+        ) : null}
+        {category === "Advanced JavaScript" ? (
+          <img
+            src="https://e7.pngegg.com/pngimages/130/641/png-clipart-javascript-node-js-computer-icons-logo-application-software-javascript-icon-text-logo.png"
+            alt="Advanced JavaScript logo"
+          />
+        ) : null}
+        {category === "CSS" ? (
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/919/919826.png"
+            alt="CSS logo"
+          />
+        ) : null}
+        {category === "Miscellaneous" ? (
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/1010/1010721.png"
+            alt="Miscellaneous logo"
+          />
+        ) : null}
+        {category === "Node.js" ? (
+          <img
+            src="https://cdn.iconscout.com/icon/free/png-256/nodejs-2-226035.png"
+            alt="Node.js logo"
+          />
+        ) : null}
+        {category === "SQL" ? (
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/4248/4248340.png"
+            alt="SQL logo"
+          />
+        ) : null}
+        {category === "UI/UX" ? (
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/7858/7858975.png"
+            alt="UI/UX logo"
+          />
+        ) : null}
+        {category === "Testing" ? (
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSffNFCMkCpiaFUO9zQlwIfm5HuobQSdlelQw&usqp=CAU"
+            alt="Testing logo"
+          />
+        ) : null}
       </div>
 
       <a className="link" target="blank" href={link}>
@@ -95,11 +161,9 @@ function CardItem({ title, difficulty, category, link, author }) {
         </h1>
       </a>
 
+
 {/* 🛠️CALLING the getDingoRatings functino above to conditionally render the correct number of images */}
       <div className="imageContainer">{getDingoRatings(difficulty)}</div>
-
-   
-
       <div aria-label="author-tag" className="author">
         {author}
       </div>
