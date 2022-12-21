@@ -2,26 +2,35 @@ import React from "react";
 import "./CardItem.css";
 import dingo from "./dingo.png";
 
+// FOR loop that renders the same number of dingo images as the number that is passed down as the difficulty prop. We have pulled the for loop outside of the function because it isn't permitted in JSX. But you can just call it wihtin the function, as we've done down there.
+// The image elements are pushed into an array which is rendered in the return statement.
+const getDingoRatings = (difficulty) => {
+  let content = [];
+  for (let i = 0; i < difficulty; i += 1) {
+    content.push(<img src={dingo} alt="dingo" aria-label="DDImage" />);
+  }
+  return content;
+};
+
 // Card item component: displays data from resources table as category image, a heading that hyperlinks through (on a separate page) to the resource, 1/2/3 dingo images depending on the difficulty rating, and the author of the resource
 
 /**
  * displays data from resources table as category image, a heading that hyperlinks through (on a separate page) to the resource, 1/2/3 dingo images depending on the difficulty rating, and the author of the resource
  * @param {string} title - resource title
- * @param {number} difficulty - difficulty from 1-3 
+ * @param {number} difficulty - difficulty from 1-3
  * @param {string} category - one of ten different topic areas
- * @param {string} link - link to resource 
+ * @param {string} link - link to resource
  * @param {string} author - resource contributor (Coach/Bootcamper/Chris)
- * @returns {component} 
+ * @returns {component}
  */
 function CardItem({ title, difficulty, category, link, author }) {
   return (
     <div className="cardItem">
-
       {/* here is where we're conditionally rendering the different topic cards using external URLs*/}
       <div className="topic-image" aria-label="topic-div">
         {category === "React" ? (
           <img
-		  // aria label on this image for testing purposes
+            // aria label on this image for testing purposes
             aria-label="category-image"
             src="https://cdn-icons-png.flaticon.com/512/1183/1183672.png"
             alt="react logo"
@@ -88,26 +97,9 @@ function CardItem({ title, difficulty, category, link, author }) {
           {title}
         </h1>
       </a>
-      {difficulty === 1 ? (
-        <div className="imageContainer">
-          <img src={dingo} alt="dingo" aria-label="DDImage" />
-        </div>
-      ) : null}
 
-      {difficulty === 2 ? (
-        <div className="imageContainer">
-          <img src={dingo} alt="dingo" aria-label="DDImage" />
-          <img src={dingo} alt="dingo" aria-label="DDImage" />
-        </div>
-      ) : null}
-      {difficulty === 3 ? (
-        <div className="imageContainer">
-          <img src={dingo} alt="dingo" aria-label="DDImage" />
-          <img src={dingo} alt="dingo" aria-label="DDImage" />
-          <img src={dingo} alt="dingo" aria-label="DDImage" />
-        </div>
-      ) : null}
-
+      {/* 🛠️CALLING the getDingoRatings function above to conditionally render the correct number of images */}
+      <div className="imageContainer">{getDingoRatings(difficulty)}</div>
       <div aria-label="author-tag" className="author">
         {author}
       </div>
